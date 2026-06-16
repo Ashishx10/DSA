@@ -10,5 +10,5 @@ class Solution:
             else:
                 l=r
         return maxp
-#time complexity:0(n)
-#space complexity:0(1)
+#time complexity:o(n)
+#space complexity:o(1)
