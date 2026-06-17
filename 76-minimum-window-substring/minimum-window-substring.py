@@ -23,4 +23,6 @@ class Solution:
                 l+=1
         l,r=res
         return s[l:r+1] if length!=float("inf") else ""
+        #time complexity:o(n)
+        #space complexity:0(1)
         
