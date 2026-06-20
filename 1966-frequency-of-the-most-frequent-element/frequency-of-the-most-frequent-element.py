@@ -1,10 +1,8 @@
 class Solution:
     def maxFrequency(self, nums: List[int], k: int) -> int:
         nums.sort()
-        l=0
-        r=0
-        res=0
-        total=0
+        l,r=0,0
+        res,total=0,0
         while r<len(nums):
             total+=nums[r]
             while nums[r]*(r-l+1)>total+k:
