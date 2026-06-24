@@ -12,4 +12,5 @@ class Solution:
                 summ+=d[s[i]]
                 i+=1
         return summ
-        
+#time complexity:o(n)
+#space complexity:o(1)
