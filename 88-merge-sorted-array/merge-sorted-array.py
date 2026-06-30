@@ -3,13 +3,17 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        x=len(nums1)
-        y=len(nums2)
-        merged=[]
-        for i in range(m):
-                merged.append(nums1[i])
-        for j in range(n):
-            merged.append(nums2[j])
-        merged.sort()
-        for i in range(m+n):
-            nums1[i]=merged[i]
+        x,y=m-1,n-1
+        for z in range(m+n-1,-1,-1):
+            if x<0:
+                nums1[z]=nums2[y]
+                y-=1
+            elif y<0:
+                break
+            elif nums1[x]>nums2[y]:
+                nums1[z]=nums1[x]
+                x-=1
+            else:
+                nums1[z]=nums2[y]
+                y-=1
+                
