@@ -12,3 +12,5 @@ class Solution:
                 nums[j]=nums[i]
                 j+=1
         return j
+#time complexity:o(n)
+#space complexity:o(1)
