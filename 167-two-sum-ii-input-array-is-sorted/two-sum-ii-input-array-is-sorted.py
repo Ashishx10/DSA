@@ -3,10 +3,13 @@ class Solution:
         n=len(numbers)
         l=0
         r=n-1
-        while l<=r:
-            if numbers[l]+numbers[r]==target:
+        while l<r:
+            summ=numbers[l]+numbers[r]
+            if summ==target:
                 return [l+1,r+1]
-            elif numbers[l]+numbers[r]<target:
+            elif summ<target:
                 l+=1
             else:
                 r-=1
+#time complexity:o(n)
+#space complexity:o(1)
