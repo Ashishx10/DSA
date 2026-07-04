@@ -6,7 +6,7 @@ class Solution:
         max_amount=0
         while l<r:
             w=r-l
-            h=min(height[l],height[r])
+            h=min(height[l],height[r])#increment shorter wall to get larger area
             a=w*h
             max_amount=max(max_amount,a)
             if height[l]<height[r]:
