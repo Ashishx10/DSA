@@ -25,5 +25,6 @@ class Solution:
                     else:
                         hi-=1
         return answer
-          
+#time complexity:o(n^3)
+#space complexity:o(n)   
         
