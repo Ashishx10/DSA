@@ -9,8 +9,7 @@ class Solution:
             for j in range(i+1,n):
                 if j>i+1 and nums[j]==nums[j-1]:
                     continue
-                lo=j+1
-                hi=n-1
+                lo,hi=j+1,n-1
                 while lo<hi:
                     summ=nums[i]+nums[j]+nums[lo]+nums[hi]
                     if summ==target:
@@ -26,5 +25,5 @@ class Solution:
                     else:
                         hi-=1
         return answer
-            
+          
         
