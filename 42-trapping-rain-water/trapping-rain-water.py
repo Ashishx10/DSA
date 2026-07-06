@@ -18,5 +18,6 @@ class Solution:
                 r-=1
                 maxR=max(maxR,height[r])
         return water
-
+#time complexity:o(n)
+#space complexity:o(1)
         
