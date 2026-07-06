@@ -1,23 +1,19 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
-        water=0
-        l=0
+        l_wall,r_wall=0,0
         n=len(height)
-        r=n-1
-        maxL=height[l]
-        maxR=height[r]
-        while l<r:
-            if height[l]<height[r]:
-                if maxL>height[l+1]:
-                    water+=maxL-height[l+1]
-                l+=1
-                maxL=max(maxL,height[l])
-            else:
-                if maxR>height[r-1]:
-                    water+=maxR-height[r-1]
-                r-=1
-                maxR=max(maxR,height[r])
-        return water
+        max_left=[0]*n
+        max_right=[0]*n
+        for i in range(n):
+            j=-i-1
+            max_left[i]=l_wall
+            max_right[j]=r_wall
+            l_wall=max(l_wall,height[i])
+            r_wall=max(r_wall,height[j])
+        summ=0
+        for i in range(n):
+            pot=min(max_left[i],max_right[i])
+            summ+=max(0,pot-height[i])
+        return summ
 #time complexity:o(n)
-#space complexity:o(1)
-        
+#space complexity:o(n)
