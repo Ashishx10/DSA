@@ -12,5 +12,7 @@ class Solution:
         while res:
             x=x*10+res.pop()
         return x*summ
+#time complexity:o(logn)
+#space complexity:o(logn)
 
         
