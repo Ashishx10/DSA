@@ -6,4 +6,5 @@ class Solution:
             if stone in s:
                 count+=1
         return count
-        
+#time complexity:O(m+n)
+#space complexity:o(n)      
