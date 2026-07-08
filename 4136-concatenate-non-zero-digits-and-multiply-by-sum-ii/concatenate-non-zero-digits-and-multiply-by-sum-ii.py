@@ -23,3 +23,6 @@ class Solution:
             x = (prefix_num[r + 1]- prefix_num[l] * pow10[non_zero]) % MOD
             ans.append((x * summ) % MOD)
         return ans
+#time complexity:o(n+q)
+#space complexity:o(n)
+    
