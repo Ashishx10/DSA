@@ -1,11 +1,12 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         n=len(nums)
-        have={}
+        h={}
         for i in range(n):
-            need=target-nums[i]
-            if need in have:
-                return[have[need],i]
-            have[nums[i]]=i
+            h[nums[i]]=i
+        for i in range(n):
+            y=target-nums[i]
+            if y in h and h[y]!=i:
+                return[i,h[y]]
 #time complexity:o(n)
 #space complexity:o(n)
