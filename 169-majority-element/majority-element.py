@@ -10,3 +10,5 @@ class Solution:
             else:
                 count-=1
         return ans
+#time complexity:o(n)
+#space complexity:o(1)
