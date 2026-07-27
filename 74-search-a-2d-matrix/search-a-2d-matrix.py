@@ -1,10 +1,24 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        rows=len(matrix)
-        cols=len(matrix[0])
-        for i in range(rows):
-            for j in range(cols):
-                if matrix[i][j]==target:
-                    return True
+        m=len(matrix)
+        n=len(matrix[0])
+        t = m * n
+        l = 0
+        r= t - 1
+        while l <= r:
+            m=l+(r-l) // 2
+            i = m // n
+            j = m % n
+            mid_num = matrix[i][j]
+            if target == mid_num:
+                return True
+            elif target < mid_num:
+                r=m-1
+            else:
+                l=m+1
         return False
+#time complexity:o(log(m*n))
+#space complexity:o(1)
+
+
         
