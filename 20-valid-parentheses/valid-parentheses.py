@@ -13,5 +13,5 @@ class Solution:
                     if popped != hashmap[c]:
                         return False
         return not stk
-
-        
+#time complexity:o(n)
+#space complexity:o(n)       
