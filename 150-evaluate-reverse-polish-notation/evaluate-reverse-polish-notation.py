@@ -19,7 +19,7 @@ class Solution:
                         stk.append(floor(division))
             else:
                 stk.append(int(t))
-        return stk[0]
+        return stk[-1]
 #time complexity:o(n)
 #space complexity:o(n)
                 
