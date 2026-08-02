@@ -17,6 +17,7 @@ class Solution:
             w = n - j
             max_area = max(max_area,h*w)
         return max_area
-
+#time complexity:o(n)
+#space compleity:o(n)
 
         
