@@ -52,7 +52,7 @@ class MyCircularQueue:
     def isFull(self) -> bool:
         return self.space == 0
 #time complexity:o(1)
-#space complexity:o(1)
+#space complexity:o(k)
 
 
 # Your MyCircularQueue object will be instantiated and called as such:
