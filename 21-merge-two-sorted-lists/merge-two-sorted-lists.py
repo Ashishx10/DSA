@@ -18,4 +18,6 @@ class Solution:
                 list2 = list2.next
         curr.next = list1 if list1 else list2
         return d.next
+#time complexity: o(n)
+#time complexity:o(1)
         
