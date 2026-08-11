@@ -15,5 +15,7 @@ class Solution:
             ahead = ahead.next
         behind.next = behind.next.next
         return dummy.next # we won't return head as it may point to garbage node
+#Time complexity: o(M)
+#space complexity: o(1)
 
         
