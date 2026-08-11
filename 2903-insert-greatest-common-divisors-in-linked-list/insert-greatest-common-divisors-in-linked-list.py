@@ -15,5 +15,6 @@ class Solution:
             prev = curr
             curr = curr.next
         return head
-
+# time complexity:o(n*A)
+# space complexity:o(1)
         
