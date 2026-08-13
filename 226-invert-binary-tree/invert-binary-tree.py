@@ -12,3 +12,5 @@ class Solution:
         self.invertTree(root.left)
         self.invertTree(root.right)
         return root
+#time complexity: o(n)
+#space complecity:o(n)
