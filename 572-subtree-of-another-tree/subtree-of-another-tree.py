@@ -21,3 +21,5 @@ class Solution:
                 return True
             return has_subtree(root.left) or has_subtree(root.right)
         return has_subtree(root)
+#time complexity:o(m*n)
+#space complexity:o(m+n)
