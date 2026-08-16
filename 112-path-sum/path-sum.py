@@ -14,6 +14,7 @@ class Solution:
                 return cur_sum == targetSum
             return has_sum(root.left, cur_sum) or has_sum(root.right, cur_sum)
         return has_sum(root,0)
-
+#time complexity:o(N)
+#space complexity:o(N)
             
         
