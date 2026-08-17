@@ -21,4 +21,5 @@ class Solution:
                 if node.right: queue.append(node.right)
             ans.append(level)
         return ans
-
+#time complexity:o(n)
+#space complexity:o(n)
