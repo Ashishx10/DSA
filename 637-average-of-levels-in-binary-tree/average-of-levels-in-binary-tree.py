@@ -22,3 +22,5 @@ class Solution:
             avg /= n
             avgs.append(avg)
         return avgs
+# time complexity:o(n)
+#space complexity:o(n)
