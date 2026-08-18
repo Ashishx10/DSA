@@ -18,6 +18,7 @@ class Solution:
             dfs(node.right)
         dfs(root)
         return min_distance[0]
-
+#time complexity:o(n)
+#space complexity:o(n)
 
         
