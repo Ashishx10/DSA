@@ -19,3 +19,5 @@ class Solution:
                 dfs(node.right)
         dfs(root)
         return ans[0]
+#time complexity:o(n)
+#space complexity:o(n)       
