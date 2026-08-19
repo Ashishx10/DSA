@@ -22,3 +22,5 @@ class Solution:
                 return
         search(root)
         return lca[0]
+# time complexity:o(n)
+#space complexity:o(n)
