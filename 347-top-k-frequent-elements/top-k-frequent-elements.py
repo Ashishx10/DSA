@@ -16,3 +16,5 @@ class Solution:
             if len(ret) == k:
                 break
         return ret
+# time complexity:o(n)
+# space complexity:o(n)
