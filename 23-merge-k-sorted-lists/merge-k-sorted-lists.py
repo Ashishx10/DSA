@@ -20,3 +20,5 @@ class Solution:
             if node:
                 heapq.heappush(heap,(node.val,i,node))
         return D.next
+# time complexity:o(Nlogk)
+# space complexity:o(K)
