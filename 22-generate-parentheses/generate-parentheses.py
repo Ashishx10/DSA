@@ -15,3 +15,5 @@ class Solution:
                 sol.pop()
         backtrack(0,0)
         return ans
+# time complexity:o(2**n)
+# space complexity:o(n)
