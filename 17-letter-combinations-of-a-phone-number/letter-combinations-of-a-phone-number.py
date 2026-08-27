@@ -18,3 +18,5 @@ class Solution:
                 sol.pop()
         backtrack(0)
         return ans
+# time complexity:o(n*4**n)
+# space complexity: o(n)
