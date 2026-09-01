@@ -37,3 +37,5 @@ class Solution:
         p_coords = get_coords(p_que, p_seen)
         a_coords = get_coords(a_que, a_seen)
         return list(p_coords & a_coords)
+# time complexity: o(m*n)
+# space complexity: o(m*n)
