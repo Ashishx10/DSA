@@ -31,3 +31,5 @@ class Solution:
             return num_minutes
         else:
             return -1
+# time complexity: o(m*n)
+# space complexity: o(m*n) 
