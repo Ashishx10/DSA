@@ -18,7 +18,7 @@ class Solution:
             return max(min_times.values())
         else:
             return -1
-        
-
+# time complexity: o((V+E) log (V))
+# space complexity: o(V+E)
       
      
