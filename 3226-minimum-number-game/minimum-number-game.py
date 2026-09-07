@@ -1,8 +1,14 @@
+import heapq
 class Solution:
     def numberGame(self, nums: list[int]) -> list[int]:
-        # Sort the array in ascending order
-        nums.sort()
-        # Swap adjacent elements (step by 2)
-        for i in range(0, len(nums), 2):
-            nums[i], nums[i + 1] = nums[i + 1], nums[i]
-        return nums
+        # Convert the list into a min-heap
+        heapq.heapify(nums)
+        arr = []
+        # Simulate the game until the heap is empty
+        while nums:
+            alice_pick = heapq.heappop(nums)
+            bob_pick = heapq.heappop(nums)
+            # Bob appends first, then Alice
+            arr.append(bob_pick)
+            arr.append(alice_pick)
+        return arr
