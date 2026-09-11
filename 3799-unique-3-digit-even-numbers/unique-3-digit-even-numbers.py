@@ -37,6 +37,8 @@ class Solution:
             if is_possible:
                 valid_count += 1
         return valid_count 
+# time complexity: o(n)
+# space complexity: o(1)
                 
 
 
