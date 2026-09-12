@@ -1,17 +1,33 @@
+from bisect import bisect_left
+from typing import List
 class Solution:
     def maximumWeight(self, intervals: List[List[int]]) -> List[int]:
         n = len(intervals)
-        order = sorted(range(n), key=lambda i: intervals[i][1])  # by right endpoint
-        rights = [intervals[i][1] for i in order]
-
-        prev = [(0, [])] * (n + 1)  # k = 0: nothing picked
-        for _ in range(4):
-            cur = [(0, [])] * (n + 1)
-            for p in range(1, n + 1):
-                i = order[p - 1]  # take next interval
-                l, r, w = intervals[i]
-                j = bisect_left(rights, l)  # intervals ending before l
-                score, ids = prev[j]
-                cur[p] = min((score - w, sorted(ids + [i])), cur[p - 1])
-            prev = cur
-        return prev[n][1]
+        arr = [(intervals[i][1], intervals[i][0], intervals[i][2], i) for i in range(n)]
+        arr.sort(key=lambda x: x[0])
+        ends = [x[0] for x in arr]
+        dp = [[0] * 5 for _ in range(n + 1)]
+        indices = [[[] for _ in range(5)] for _ in range(n + 1)]
+        for i in range(n):
+            r, l, weight, idx = arr[i]
+            k = bisect_left(ends, l, hi=i)
+            for j in range(1, 5):
+                s1 = dp[i][j]
+                s2 = dp[k][j - 1] + weight
+                c1 = indices[i][j]
+                c2 = indices[k][j - 1] + [idx]
+                c2.sort()
+                if s1 > s2:
+                    dp[i + 1][j] = s1
+                    indices[i + 1][j] = c1.copy()
+                elif s2 > s1:
+                    dp[i + 1][j] = s2
+                    indices[i + 1][j] = c2
+                else:
+                    if c1 <= c2:
+                        dp[i + 1][j] = s1
+                        indices[i + 1][j] = c1.copy()
+                    else:
+                        dp[i + 1][j] = s2
+                        indices[i + 1][j] = c2
+        return indices[n][4]
