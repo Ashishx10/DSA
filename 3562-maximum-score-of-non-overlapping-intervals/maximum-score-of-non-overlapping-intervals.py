@@ -31,3 +31,5 @@ class Solution:
                         dp[i + 1][j] = s2
                         indices[i + 1][j] = c2
         return indices[n][4]
+# Time complexity: O(nlogn)
+# Space complexity: O(n)
