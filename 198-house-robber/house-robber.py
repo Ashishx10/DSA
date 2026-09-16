@@ -30,6 +30,7 @@ class Solution:
         return helper(n-1)
 '''
 
+# Bottom up approach(Tabulation)
 class Solution:
     def rob(self, nums: list[int]) -> int:
         n = len(nums)
@@ -38,8 +39,11 @@ class Solution:
         if n == 2:
             return max(nums[0],nums[1])
         dp = [0] * n
-        dp[0] = nums[0]
-        dp[1] = max(nums[0],nums[1])
+        prev = nums[0] # dp[0] = nums[0]
+        curr = max(nums[0],nums[1]) # dp[1] = max(nums[0],nums[1])
         for i in range(2,n):
-            dp[i] = max(nums[i] + dp[i-2], dp[i-1])
-        return dp[n-1]
+            prev, curr = curr, max(nums[i] + prev, curr)
+            #dp[i] = max(nums[i] + dp[i-2], dp[i-1])
+        return  curr # dp[n-1]
+# time complexity: o(n)
+# space complexity: o(1)
