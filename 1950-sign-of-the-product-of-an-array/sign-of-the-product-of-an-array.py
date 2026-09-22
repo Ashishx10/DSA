@@ -7,3 +7,5 @@ class Solution:
             elif x < 0:
                 product_sign *= -1
         return product_sign
+# time complexity: o(n)
+# space complexity: o(1)
