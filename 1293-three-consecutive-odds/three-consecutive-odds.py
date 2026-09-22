@@ -9,4 +9,6 @@ class Solution:
             else:
                 count = 0
         return False
-# time complexity
+
+# time complexity: o(n)
+# space complexity: o(1)
