@@ -1,21 +1,15 @@
 class Solution:
     def evaluate(self, s: str, knowledge: List[List[str]]) -> str:
         d = {k: v for k, v in knowledge}
-        stack = []
-        is_key = False
-        current_key = []
         
-        for char in s:
-            if char == '(':
-                is_key = True
-            elif char == ')':
-                is_key = False
-                key_str = "".join(current_key)
-                stack.append(d.get(key_str, '?'))
-                current_key = []  # Reset for the next bracket pair
-            elif is_key:
-                current_key.append(char)
-            else:
-                stack.append(char)
-                
-        return "".join(stack)
+        # Split by opening bracket
+        parts = s.split('(')
+        ans = [parts[0]]  # The first part never starts with a key
+        
+        for part in parts[1:]:
+            # Every subsequent part contains exactly one ')'
+            key, text = part.split(')')
+            ans.append(d.get(key, '?'))
+            ans.append(text)
+            
+        return "".join(ans)
